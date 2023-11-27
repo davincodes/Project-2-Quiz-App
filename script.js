@@ -27,11 +27,25 @@ const content = [
   // Add more questions as needed
 ];
 
+const quizStart = document.getElementById("start-quiz");
+const customize = document.getElementById("customize");
+const quizContainer = document.getElementById("quiz-container");
+
+quizStart.addEventListener("click", () => {
+  quizContainer.style.display = "inline-block";
+  startAll();
+  customize.disabled = true;
+  customize.style.display = "none";
+
+  quizStart.disabled = true;
+  quizStart.style.display = "none";
+});
+
 let currQuestionIndex = 0;
 let score = 0;
 
 let timer;
-let timerRemaining = 120;
+let timerRemaining = 10;
 
 const questionContainer = document.getElementById("question-content");
 const choicesContainer = document.getElementById("choices-content");
@@ -128,7 +142,7 @@ function endQuiz() {
   tryAgain.style.display = "inline-block";
 
   tryAgain.addEventListener("click", () => {
-    timerRemaining = 120;
+    timerRemaining = 10;
     currQuestionIndex = 0;
     score = 0;
     stopTimer();
@@ -141,5 +155,3 @@ function endQuiz() {
     startAll();
   });
 }
-
-startAll();
