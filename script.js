@@ -62,11 +62,10 @@ function checkAnswer(index) {
   const currAnswer = content[currQuestionIndex];
   if (currAnswer.choices[index] === currAnswer.answer) {
     score++;
-    document.getElementById(`options-${index}`).style.backgroundColor = "green";
+    document.getElementById(`options-${index}`).style.backgroundColor = "#66fcf1";
   } else {
-    document.getElementById(`options-${index}`).style.backgroundColor = "red";
+    document.getElementById(`options-${index}`).style.backgroundColor = "#EC5656"; // 
   }
-
   const buttons = document.querySelectorAll(".options");
   buttons.forEach((buttons) => (buttons.disabled = true));
 }

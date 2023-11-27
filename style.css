@@ -4,7 +4,7 @@ body {
 }
 #navigation-bar {
   background-color: #0b0c10 !important;
-  font-family: "Josefin Slab", serif;
+  font-family: 'VT323', monospace;
 }
 #color {
   background-color: #66fcf1 !important;
@@ -17,7 +17,7 @@ body {
 }
 #title {
   color: #66fcf1;
-  font-family: "Josefin Slab", serif;
+  font-family: 'VT323', monospace;
 }
 #text-color {
   color: #66fcf1 !important;
@@ -36,5 +36,65 @@ body {
 
 /* Na add ko simple styling lng sya*/
 .question-container {
-  color: white;
+  color:#66fcf1 !important;
+  font-family: 'VT323', monospace;
+}
+#choices-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.options {
+  margin: 5px; /* Adjust the margin as needed for spacing between choices */
+  flex: 1 0 45%; /* Adjust the width of the choices */
+  padding: 10px;
+  border-radius: 14px;
+}
+.next-button {
+  display: inline-block;
+  padding: 0.5em 1.6em;
+  border: 3px solid #ffffff;
+  margin: 0 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #13a4b1;
+  text-align: center;
+  transition: all 0.2s;
+  animation: bn13bouncy 5s infinite linear;
+  position: relative;
+  border-radius: 14px;
+  color: black;
+}
+
+.next-button:hover {
+  background-color:#66fcf1;
+  color: #000000;
+}
+
+@keyframes next-buttonbouncy {
+  0% {
+    top: 0em;
+  }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.9em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.4em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
 }
