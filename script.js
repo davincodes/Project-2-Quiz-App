@@ -1,50 +1,95 @@
 const content = [
   {
     question: "What is the purpose of the 'typeof' operator in JavaScript?",
-    answer: "To determine the type of a variable",
-    choices: [
-      "To compare two values",
-      "To declare a variable",
-      "To loop through an array",
-    ],
+    answer: "Type",
+    choices: ["Compare", "Declare", "Loop", "Type"],
   },
   {
     question: "What is a closure in JavaScript?",
-    answer:
-      "A function that has access to its own scope, the outer function's scope, and the global scope",
-    choices: [
-      "A loop that runs infinitely",
-      "A variable declared with 'const'",
-      "An HTML tag",
-    ],
+    answer: "Scope",
+    choices: ["Looping", "Const", "Tag", "Scope"],
   },
   {
     question: "What is the difference between 'let', 'const', and 'var'?",
-    answer:
-      "They are used to declare variables with different scoping rules and immutability",
-    choices: [
-      "They are interchangeable",
-      "They are used for mathematical operations",
-      "They represent different data types",
-    ],
+    answer: "Scoping",
+    choices: ["Interchangeable", "Mathematical", "DataTypes", "Scoping"],
   },
   {
     question: "What is an arrow function in JavaScript?",
-    answer: "A concise way to write functions in ES6 syntax",
-    choices: [
-      "A function that always throws an error",
-      "A function used for sorting arrays",
-      "A type of loop",
-    ],
+    answer: "Concise",
+    choices: ["ThrowsError", "Sorting", "Loop", "Concise"],
   },
   {
     question: "What does the 'this' keyword refer to in JavaScript?",
-    answer: "The object that is currently executing the function",
-    choices: [
-      "The previous function in the call stack",
-      "The global object",
-      "The parent object",
-    ],
+    answer: "Executing",
+    choices: ["CallStack", "Global", "Parent", "Executing"],
   },
   // Add more questions as needed
 ];
+
+let currQuestionIndex = 0;
+let score = 0;
+
+const questionContainer = document.getElementById("question-content");
+const choicesContainer = document.getElementById("choices-content");
+
+function startQuiz() {
+  showQuestion();
+  showChoices();
+}
+
+function showQuestion() {
+  const question = content[currQuestionIndex].question;
+  questionContainer.innerText = content[currQuestionIndex].question;
+}
+
+function showChoices() {
+  const choices = content[currQuestionIndex].choices;
+
+  // to refresh the prev choices
+  choicesContainer.innerHTML = "";
+  choices.map((choice, index) => {
+    const buttons = document.createElement("button");
+    buttons.innerHTML = choice;
+    buttons.classList.add("options");
+    buttons.id = `options-${index}`;
+    buttons.addEventListener("click", () => checkAnswer(index));
+    choicesContainer.appendChild(buttons);
+  });
+}
+
+function checkAnswer(index) {
+  const currAnswer = content[currQuestionIndex];
+  if (currAnswer.choices[index] === currAnswer.answer) {
+    score++;
+    document.getElementById(`options-${index}`).style.backgroundColor = "green";
+  } else {
+    document.getElementById(`options-${index}`).style.backgroundColor = "red";
+  }
+
+  const buttons = document.querySelectorAll(".options");
+  buttons.forEach((buttons) => (buttons.disabled = true));
+}
+
+function nextQuestion() {
+  currQuestionIndex++;
+  if (currQuestionIndex < content.length) {
+    startQuiz();
+  } else {
+    endQuiz();
+  }
+}
+
+function endQuiz() {
+  questionContainer.innerHTML = `Your score is ${score}`;
+  choicesContainer.innerHTML = "";
+  const button = document.getElementById("next-btn");
+  button.innerHTML = "Try again";
+  button.addEventListener("click", () => {
+    score = 0;
+    currQuestionIndex = 0;
+    startQuiz();
+  });
+}
+
+startQuiz();
