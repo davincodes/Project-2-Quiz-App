@@ -30,12 +30,40 @@ const content = [
 let currQuestionIndex = 0;
 let score = 0;
 
+let timer;
+let timerRemaining = 120;
+
 const questionContainer = document.getElementById("question-content");
 const choicesContainer = document.getElementById("choices-content");
+const timerContainer = document.getElementById("timer");
+const button = document.getElementById("next-btn");
+
+function startAll() {
+  startQuiz();
+  startTimer();
+}
 
 function startQuiz() {
   showQuestion();
   showChoices();
+}
+
+function startTimer() {
+  // show timer before decrement
+  timerContainer.innerHTML = timerRemaining;
+  timer = setInterval(() => {
+    timerRemaining--;
+    // show timer during 0s
+    timerContainer.innerHTML = timerRemaining;
+    if (timerRemaining <= 0) {
+      endQuiz();
+      clearInterval(timer);
+    }
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timer);
 }
 
 function showQuestion() {
@@ -45,9 +73,12 @@ function showQuestion() {
 
 function showChoices() {
   const choices = content[currQuestionIndex].choices;
+  button.disabled = true;
 
   // to refresh the prev choices
   choicesContainer.innerHTML = "";
+
+  // map new button choices
   choices.map((choice, index) => {
     const buttons = document.createElement("button");
     buttons.innerHTML = choice;
@@ -59,12 +90,15 @@ function showChoices() {
 }
 
 function checkAnswer(index) {
+  button.disabled = false;
   const currAnswer = content[currQuestionIndex];
   if (currAnswer.choices[index] === currAnswer.answer) {
     score++;
-    document.getElementById(`options-${index}`).style.backgroundColor = "#66fcf1";
+    document.getElementById(`options-${index}`).style.backgroundColor =
+      "#66fcf1";
   } else {
-    document.getElementById(`options-${index}`).style.backgroundColor = "#EC5656"; // 
+    document.getElementById(`options-${index}`).style.backgroundColor =
+      "#EC5656"; //
   }
   const buttons = document.querySelectorAll(".options");
   buttons.forEach((buttons) => (buttons.disabled = true));
@@ -80,15 +114,32 @@ function nextQuestion() {
 }
 
 function endQuiz() {
-  questionContainer.innerHTML = `Your score is ${score}`;
+  timerRemaining <= 0
+    ? (questionContainer.innerHTML = `Times up!\nYour score is ${score}`)
+    : (questionContainer.innerHTML = `Your score is ${score}`);
+
   choicesContainer.innerHTML = "";
-  const button = document.getElementById("next-btn");
-  button.innerHTML = "Try again";
-  button.addEventListener("click", () => {
-    score = 0;
+
+  button.disabled = true;
+  button.style.display = "none";
+
+  const tryAgain = document.getElementById("try-again");
+  tryAgain.disabled = false;
+  tryAgain.style.display = "inline-block";
+
+  tryAgain.addEventListener("click", () => {
+    timerRemaining = 120;
     currQuestionIndex = 0;
-    startQuiz();
+    score = 0;
+    stopTimer();
+
+    tryAgain.disabled = true;
+    tryAgain.style.display = "none";
+
+    button.disabled = false;
+    button.style.display = "inline-block";
+    startAll();
   });
 }
 
-startQuiz();
+startAll();
