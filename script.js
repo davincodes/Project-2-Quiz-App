@@ -3,7 +3,7 @@ const content = [
     id: 1,
     question: "What is the purpose of the 'typeof' operator in JavaScript?",
     answer: "Type",
-    choices: ["Compare", "Declare", "Loop", "Type"],
+    choices: ["Compare", "Declare", "Loop", "type"],
   },
   {
     id: 2,
@@ -129,8 +129,10 @@ function showChoices() {
 
 function checkAnswer(index) {
   button.disabled = false;
-  const currAnswer = content[currIndex];
-  if (currAnswer.choices[index] === currAnswer.answer) {
+  const currAnswer = content[currQuestionIndex];
+  if (
+    currAnswer.choices[index].toUpperCase() === currAnswer.answer.toUpperCase()
+  ) {
     score++;
     document.getElementById(`options-${index}`).style.backgroundColor =
       "#66fcf1";
