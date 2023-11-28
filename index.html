@@ -4,8 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./images/image-removebg-preview.png" />
-    <title>Code Maestro | Play your way to understanding</title>
+    <title>Code Maestro | Ultimate Coding quiz web app</title>
     <link rel="stylesheet" href="style.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +26,7 @@
       class="container-fluid navbar navbar-expand-lg navbar-light bg-light"
       id="navigation-bar"
     >
-      <a class="navbar-brand ms-3" id="text-color" href="#"
+      <a class="navbar-brand ms-3" id="nav-text" href="#"
         ><svg
           xmlns="http://www.w3.org/2000/svg"
           width="35"
@@ -118,7 +119,6 @@
           </div>
         </div>
       </header>
-      <!-- Na add ko, sorry sa bagong format ni html HAHAHAHAHAHAHAHAHA -->
       <div class="container">
         <div class="row">
           <button class="next-button" id="start-quiz">Start Quiz</button>
@@ -167,6 +167,12 @@
           </div>
         </div>
       </div>
+      <footer>
+        <marquee
+          >Welcome to Code Maestro, the ultimate coding quiz web app designed to
+          challenge and refine your programming skills.</marquee
+        >
+      </footer>
     </section>
 
     <!-- About -->
@@ -205,28 +211,83 @@
                     stroke-linejoin="round"
                   />
                 </svg>
-                &nbsp;Code Maestro : Quiz Web App
+                &nbsp;Code Maestro : Quiz App
                 <hr />
               </h3>
             </div>
           </div>
-          <div class="col-md-12">
+          <div class="col-md-12" data-aos="fade-right" data-aos-duration="2000">
             <p class="text-white mt-3 mx-5">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Reiciendis quo ducimus vel voluptatibus officia omnis nihil
-              facilis eaque voluptate atque nisi consectetur fuga quis
-              voluptatum sunt quaerat optio, molestiae harum.
+              Welcome to Code Maestro, the ultimate coding quiz web app designed
+              to challenge and refine your programming skills.
+              <br />
+              <br />
+              Embark on a stimulating intellectual adventure and elevate your
+              coding prowess with Code Maestro, the ultimate multiple-choice
+              coding quiz web app designed to challenge and refine your
+              programming skills. Code Maestro offers an engaging and
+              interactive platform to test your knowledge, sharpen your
+              problem-solving skills, and expand your understanding of
+              programming concepts through a captivating multiple-choice format.
+              <br />
+              <br />
+              Code Maestro presents a diverse array of multiple-choice coding
+              quizzes tailored to various skill levels, from novice programmers
+              seeking to solidify their fundamentals to experienced developers
+              striving to push the boundaries of their expertise. Each carefully
+              crafted quiz assesses your grasp of programming languages,
+              algorithms, data structures, and problem-solving techniques
+              through a series of thought-provoking multiple-choice questions.
+              <br />
+              <br />
+              Code Maestro is more than just a quiz app; it's an invitation to
+              embark on a journey of intellectual growth and coding mastery.
+              Through its engaging multiple-choice format, Code Maestro
+              challenges you to think critically, apply your coding knowledge
+              effectively, and expand your programming horizons. Embrace the
+              challenge, unleash your potential, and become a true Code Maestro.
             </p>
+            <br />
+            <!-- Instructions -->
+            <div class="text-white mx-5">
+              <h3 class="text-white fw-bold">Instructions</h3>
+              <hr />
+              <ol>
+                <li>
+                  Choose your programming language: Code Maestro offers quizzes
+                  for a variety of programming languages, including Java,
+                  Python, C++, JavaScript, and more. Select the language you
+                  want to challenge yourself in.
+                </li>
+                <br />
+                <li>
+                  Set your timer: You will be given a total of 120 seconds to
+                  answer all 10 questions in each quiz. Set your timer
+                  accordingly to ensure you have enough time to complete the
+                  challenge.
+                </li>
+                <br />
+                <li>
+                  Read the questions carefully: Each question will present you
+                  with a programming scenario or problem. Read the question
+                  carefully and consider all the available options before making
+                  your selection.
+                </li>
+              </ol>
+            </div>
           </div>
         </div>
       </div>
     </section>
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

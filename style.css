@@ -4,7 +4,7 @@ body {
 }
 #navigation-bar {
   background-color: #0b0c10 !important;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
 #color {
   background-color: #66fcf1 !important;
@@ -17,15 +17,23 @@ body {
 }
 #title {
   color: #66fcf1;
-  font-family: 'VT323', monospace;
+  font-family: "VT323", monospace;
 }
-#text-color {
+#nav-text {
   color: #66fcf1 !important;
 }
 .quiz-section {
   border: 2px solid rgb(255, 255, 255);
   height: 500px;
   background-color: #0b0c10;
+}
+marquee {
+  color: #66fcf1;
+  font-family: "VT323", monospace;
+  margin-top: 275px;
+  border: 1px solid white;
+  border-bottom-left-radius: 14px;
+  border-bottom-right-radius: 14px;
 }
 /* .quiz{
     position: relative;
@@ -37,8 +45,8 @@ body {
 /* Na add ko simple styling lng sya*/
 
 .question-container {
-  color:#66fcf1 !important;
-  font-family: 'VT323', monospace;
+  color: #66fcf1 !important;
+  font-family: "VT323", monospace;
 }
 #choices-content {
   display: flex;
@@ -46,13 +54,14 @@ body {
   justify-content: center;
 }
 
-.options { /* Adjust the margin as needed for spacing between choices */
+.options {
+  /* Adjust the margin as needed for spacing between choices */
   flex: 1 0 45%; /* Adjust the width of the choices */
   padding: 10px;
-  border-radius: 14px;;
+  border-radius: 14px;
 }
 .options:hover {
-  background-color:#66fcf1;
+  background-color: #66fcf1;
 }
 .next-button {
   display: inline-block;
@@ -67,17 +76,14 @@ body {
   color: #13a4b1;
   text-align: center;
   transition: all 0.2s;
-  animation: bn13bouncy 5s infinite linear;
   position: relative;
-  border-radius: 14px;
   color: rgb(0, 0, 0);
 }
 
 .next-button:hover {
-  background-color:#66fcf1;
+  background-color: #66fcf1;
   color: #000000;
 }
-
 @keyframes next-buttonbouncy {
   0% {
     top: 0em;
