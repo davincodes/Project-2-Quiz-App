@@ -45,7 +45,7 @@ let currQuestionIndex = 0;
 let score = 0;
 
 let timer;
-let timerRemaining = 10;
+let timerRemaining = 120;
 
 const questionContainer = document.getElementById("question-content");
 const choicesContainer = document.getElementById("choices-content");
@@ -142,7 +142,7 @@ function endQuiz() {
   tryAgain.style.display = "inline-block";
 
   tryAgain.addEventListener("click", () => {
-    timerRemaining = 10;
+    timerRemaining = 120;
     currQuestionIndex = 0;
     score = 0;
     stopTimer();
