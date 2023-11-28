@@ -1,5 +1,3 @@
-// TODO: Shuffle the multiple choices
-
 const content = [
   {
     id: 1,
@@ -34,6 +32,7 @@ const content = [
   // Add more questions as needed
 ];
 
+// TODO: No use as of now
 let currId = 5;
 
 const quizStart = document.getElementById("start-quiz");
@@ -50,15 +49,14 @@ quizStart.addEventListener("click", () => {
   quizStart.style.display = "none";
 });
 
-let currQuestionIndex = 0;
+let currIndex = 0;
 
 // to shuffle question and not show prev question
+let currQuestionIndex;
 let prevQuestionIndex = [-1];
 const keepQuestionIndex = prevQuestionIndex[0];
 
 let score = 0;
-let currQuestionIndexx;
-
 let timer;
 let timerRemaining = 120;
 
@@ -74,8 +72,6 @@ function startAll() {
 
 function startQuiz() {
   shuffleQuestion();
-  currQuestionIndexx = shuffleQuestion();
-  prevQuestionIndex.push(currQuestionIndexx);
   showQuestion();
   showChoices();
 }
@@ -107,12 +103,14 @@ function shuffleQuestion() {
 }
 
 function showQuestion() {
-  const question = content[currQuestionIndexx].question;
-  questionContainer.innerText = content[currQuestionIndexx].question;
+  currQuestionIndex = shuffleQuestion();
+  prevQuestionIndex.push(currQuestionIndex);
+  const question = content[currQuestionIndex].question;
+  questionContainer.innerText = content[currQuestionIndex].question;
 }
 
 function showChoices() {
-  const choices = content[currQuestionIndexx].choices;
+  const choices = content[currQuestionIndex].choices;
   button.disabled = true;
 
   // to refresh the prev choices
@@ -131,7 +129,7 @@ function showChoices() {
 
 function checkAnswer(index) {
   button.disabled = false;
-  const currAnswer = content[currQuestionIndex];
+  const currAnswer = content[currIndex];
   if (currAnswer.choices[index] === currAnswer.answer) {
     score++;
     document.getElementById(`options-${index}`).style.backgroundColor =
@@ -145,8 +143,8 @@ function checkAnswer(index) {
 }
 
 function nextQuestion() {
-  currQuestionIndex++;
-  if (currQuestionIndex < content.length) {
+  currIndex++;
+  if (currIndex < content.length) {
     startQuiz();
   } else {
     endQuiz();
@@ -169,7 +167,7 @@ function endQuiz() {
 
   tryAgain.addEventListener("click", () => {
     timerRemaining = 120;
-    currQuestionIndex = 0;
+    currIndex = 0;
     score = 0;
     prevQuestionIndex = [keepQuestionIndex];
     stopTimer();
