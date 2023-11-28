@@ -124,45 +124,49 @@
           <button class="next-button" id="start-quiz">Start Quiz</button>
           <button class="next-button" id="customize">Customize Quiz</button>
         </div>
-      <div
-        class="container quiz-container"
-        id="quiz-container"
-        style="display: none"
-      >
-        <div class="row">
-          <h3 class="text-white" id="timer"></h3>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-            <div id="question-container" class="question-container mt-5">
-              <h3 class="text-light" id="question-content"></h3>
+        <div
+          class="container quiz-container"
+          id="quiz-container"
+          style="display: none"
+        >
+          <div class="row">
+            <h3 class="text-white" id="timer"></h3>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div id="question-container" class="question-container mt-5">
+                <h3 class="text-light" id="question-content"></h3>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div id="options-container" class="options-container">
+              <p class="text-light" id="choices-content"></p>
+            </div>
+          </div>
+          <div class="row">
+            <div
+              class="col-md-12 d-flex justify-content-center align-items-center"
+            >
+              <button
+                id="next-btn"
+                class="next-button"
+                onclick="nextQuestion()"
+              >
+                Next
+              </button>
+              <button
+                id="try-again"
+                class="next-button"
+                style="display: none"
+                disabled
+              >
+                Try Again
+              </button>
             </div>
           </div>
         </div>
-        <div class="row">
-          <div id="options-container" class="options-container">
-            <p class="text-light" id="choices-content"></p>
-          </div>
-        </div>
-        <div class="row">
-          <div
-            class="col-md-12 d-flex justify-content-center align-items-center"
-          >
-            <button id="next-btn" class="next-button" onclick="nextQuestion()">
-              Next
-            </button>
-            <button
-              id="try-again"
-              class="next-button"
-              style="display: none"
-              disabled
-            >
-              Try Again
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
     </section>
 
     <!-- About -->
