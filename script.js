@@ -1,3 +1,6 @@
+// TODO: Stop the timer if the quiz is finished.
+// TODO: Shuffle the questions and multiple choices
+
 const content = [
   {
     question: "What is the purpose of the 'typeof' operator in JavaScript?",
@@ -131,7 +134,7 @@ function endQuiz() {
   timerRemaining <= 0
     ? (questionContainer.innerHTML = `Times up!\nYour score is ${score}`)
     : (questionContainer.innerHTML = `Your score is ${score}`);
-
+  stopTimer();
   choicesContainer.innerHTML = "";
 
   button.disabled = true;
