@@ -1,34 +1,40 @@
-// TODO: Stop the timer if the quiz is finished.
-// TODO: Shuffle the questions and multiple choices
+// TODO: Shuffle the multiple choices
 
 const content = [
   {
+    id: 1,
     question: "What is the purpose of the 'typeof' operator in JavaScript?",
     answer: "Type",
     choices: ["Compare", "Declare", "Loop", "Type"],
   },
   {
+    id: 2,
     question: "What is a closure in JavaScript?",
     answer: "Scope",
     choices: ["Looping", "Const", "Tag", "Scope"],
   },
   {
+    id: 3,
     question: "What is the difference between 'let', 'const', and 'var'?",
     answer: "Scoping",
     choices: ["Interchangeable", "Mathematical", "DataTypes", "Scoping"],
   },
   {
+    id: 4,
     question: "What is an arrow function in JavaScript?",
     answer: "Concise",
     choices: ["ThrowsError", "Sorting", "Loop", "Concise"],
   },
   {
+    id: 5,
     question: "What does the 'this' keyword refer to in JavaScript?",
     answer: "Executing",
     choices: ["CallStack", "Global", "Parent", "Executing"],
   },
   // Add more questions as needed
 ];
+
+let currId = 5;
 
 const quizStart = document.getElementById("start-quiz");
 const customize = document.getElementById("customize");
@@ -45,7 +51,13 @@ quizStart.addEventListener("click", () => {
 });
 
 let currQuestionIndex = 0;
+
+// to shuffle question and not show prev question
+let prevQuestionIndex = [-1];
+const keepQuestionIndex = prevQuestionIndex[0];
+
 let score = 0;
+let currQuestionIndexx;
 
 let timer;
 let timerRemaining = 120;
@@ -61,6 +73,9 @@ function startAll() {
 }
 
 function startQuiz() {
+  shuffleQuestion();
+  currQuestionIndexx = shuffleQuestion();
+  prevQuestionIndex.push(currQuestionIndexx);
   showQuestion();
   showChoices();
 }
@@ -83,13 +98,21 @@ function stopTimer() {
   clearInterval(timer);
 }
 
+function shuffleQuestion() {
+  let index;
+  do {
+    index = Math.floor(Math.random() * content.length);
+  } while (prevQuestionIndex.includes(index));
+  return index;
+}
+
 function showQuestion() {
-  const question = content[currQuestionIndex].question;
-  questionContainer.innerText = content[currQuestionIndex].question;
+  const question = content[currQuestionIndexx].question;
+  questionContainer.innerText = content[currQuestionIndexx].question;
 }
 
 function showChoices() {
-  const choices = content[currQuestionIndex].choices;
+  const choices = content[currQuestionIndexx].choices;
   button.disabled = true;
 
   // to refresh the prev choices
@@ -148,6 +171,7 @@ function endQuiz() {
     timerRemaining = 120;
     currQuestionIndex = 0;
     score = 0;
+    prevQuestionIndex = [keepQuestionIndex];
     stopTimer();
 
     tryAgain.disabled = true;
