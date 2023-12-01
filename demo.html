@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Footer 01</title>
+    <script nonce="bafcc503-2583-4392-b306-e9619da747d0">
+      (function (w, d) {
+        !(function (j, k, l, m) {
+          j[l] = j[l] || {};
+          j[l].executed = [];
+          j.zaraz = { deferred: [], listeners: [] };
+          j.zaraz.q = [];
+          j.zaraz._f = function (n) {
+            return async function () {
+              var o = Array.prototype.slice.call(arguments);
+              j.zaraz.q.push({ m: n, a: o });
+            };
+          };
+          for (const p of ["track", "set", "debug"]) j.zaraz[p] = j.zaraz._f(p);
+          j.zaraz.init = () => {
+            var q = k.getElementsByTagName(m)[0],
+              r = k.createElement(m),
+              s = k.getElementsByTagName("title")[0];
+            s && (j[l].t = k.getElementsByTagName("title")[0].text);
+            j[l].x = Math.random();
+            j[l].w = j.screen.width;
+            j[l].h = j.screen.height;
+            j[l].j = j.innerHeight;
+            j[l].e = j.innerWidth;
+            j[l].l = j.location.href;
+            j[l].r = k.referrer;
+            j[l].k = j.screen.colorDepth;
+            j[l].n = k.characterSet;
+            j[l].o = new Date().getTimezoneOffset();
+            if (j.dataLayer)
+              for (const w of Object.entries(
+                Object.entries(dataLayer).reduce(
+                  (x, y) => ({ ...x[1], ...y[1] }),
+                  {}
+                )
+              ))
+                zaraz.set(w[0], w[1], { scope: "page" });
+            j[l].q = [];
+            for (; j.zaraz.q.length; ) {
+              const z = j.zaraz.q.shift();
+              j[l].q.push(z);
+            }
+            r.defer = !0;
+            for (const A of [localStorage, sessionStorage])
+              Object.keys(A || {})
+                .filter((C) => C.startsWith("_zaraz_"))
+                .forEach((B) => {
+                  try {
+                    j[l]["z_" + B.slice(7)] = JSON.parse(A.getItem(B));
+                  } catch {
+                    j[l]["z_" + B.slice(7)] = A.getItem(B);
+                  }
+                });
+            r.referrerPolicy = "origin";
+            r.src =
+              "/cdn-cgi/zaraz/s.js?z=" +
+              btoa(encodeURIComponent(JSON.stringify(j[l])));
+            q.parentNode.insertBefore(r, q);
+          };
+          ["complete", "interactive"].includes(k.readyState)
+            ? zaraz.init()
+            : j.addEventListener("DOMContentLoaded", zaraz.init);
+        })(w, d, "zarazData", "script");
+      })(window, document);
+    </script>
+  </head>
+  <body>
+    <div class="content d-flex align-items-center bg-light">
+      <h2 class="w-100 text-center">Footer #1</h2>
+    </div>
+    <footer class="footer-20192">
+      <div class="site-section">
+        <div class="container">
+          <div class="cta d-block d-md-flex align-items-center px-5">
+            <div>
+              <h2 class="mb-0">Ready for a next project?</h2>
+              <h3 class="text-dark">Let's get started!</h3>
+            </div>
+            <div class="ml-auto">
+              <a href="#" class="btn btn-dark rounded-0 py-3 px-5"
+                >Contact us</a
+              >
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-sm">
+              <a href="#" class="footer-logo">Colorlib</a>
+              <p class="copyright">
+                <small>&copy; 2019</small>
+              </p>
+            </div>
+            <div class="col-sm">
+              <h3>Customers</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Buyer</a></li>
+                <li><a href="#">Supplier</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Company</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">About us</a></li>
+                <li><a href="#">Careers</a></li>
+                <li><a href="#">Contact us</a></li>
+              </ul>
+            </div>
+            <div class="col-sm">
+              <h3>Further Information</h3>
+              <ul class="list-unstyled links">
+                <li><a href="#">Terms &amp; Conditions</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+            <div class="col-md-3">
+              <h3>Follow us</h3>
+              <ul class="list-unstyled social">
+                <li>
+                  <a href="#"><span class="icon-facebook"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-twitter"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-linkedin"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-medium"></span></a>
+                </li>
+                <li>
+                  <a href="#"><span class="icon-paper-plane"></span></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+      data-cf-beacon='{"rayId":"82e8c2ee99685ff0","version":"2023.10.0","token":"cd0b4b3a733644fc843ef0b185f98241"}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
