@@ -1,3 +1,6 @@
+// TODO: when the exit button is added, should also display the marque again as it was included when the start quiz is clicked,
+// the marquee's display would be none
+
 const content = [
   {
     id: 1,
@@ -38,10 +41,12 @@ let currId = 5;
 const quizStart = document.getElementById("start-quiz");
 const customize = document.getElementById("customize");
 const quizContainer = document.getElementById("quiz-container");
+const marquee = document.getElementById("marquee");
 
 quizStart.addEventListener("click", () => {
   quizContainer.style.display = "inline-block";
   startAll();
+  marquee.style.display = "none";
   customize.disabled = true;
   customize.style.display = "none";
 
