@@ -1,5 +1,43 @@
 // TODO: when the exit button is added, should also display the marque again as it was included when the start quiz is clicked,
 // the marquee's display would be none
+
+// TODO: Add an alert if a new question was added, if there is a similar question.
+let content = JSON.parse(localStorage.getItem("content")) || [
+  {
+    id: 1,
+    question: "What is the purpose of the 'typeof' operator in JavaScript?",
+    answer: "Type",
+    choices: ["Compare", "Declare", "Loop", "type"],
+  },
+  {
+    id: 2,
+    question: "What is a closure in JavaScript?",
+    answer: "Scope",
+    choices: ["Looping", "Const", "Tag", "Scope"],
+  },
+  {
+    id: 3,
+    question: "What is the difference between 'let', 'const', and 'var'?",
+    answer: "Scoping",
+    choices: ["Interchangeable", "Mathematical", "DataTypes", "Scoping"],
+  },
+  {
+    id: 4,
+    question: "What is an arrow function in JavaScript?",
+    answer: "Concise",
+    choices: ["ThrowsError", "Sorting", "Loop", "Concise"],
+  },
+  {
+    id: 5,
+    question: "What does the 'this' keyword refer to in JavaScript?",
+    answer: "Executing",
+    choices: ["CallStack", "Global", "Parent", "Executing"],
+  },
+];
+let currId = content.length;
+
+let contentJSON = localStorage.setItem("content", JSON.stringify(content));
+
 let newQuestion = {};
 
 function newValues() {
@@ -37,6 +75,7 @@ function newValues() {
   };
   content.push(newQuestion);
   console.log(content);
+  localStorage.setItem("content", JSON.stringify(content));
 
   // Reset the form
   document.getElementById("quizForm").reset();
@@ -48,44 +87,6 @@ document
     event.preventDefault();
     newValues();
   });
-
-const content = [
-  {
-    id: 1,
-    question: "What is the purpose of the 'typeof' operator in JavaScript?",
-    answer: "Type",
-    choices: ["Compare", "Declare", "Loop", "type"],
-  },
-  {
-    id: 2,
-    question: "What is a closure in JavaScript?",
-    answer: "Scope",
-    choices: ["Looping", "Const", "Tag", "Scope"],
-  },
-  {
-    id: 3,
-    question: "What is the difference between 'let', 'const', and 'var'?",
-    answer: "Scoping",
-    choices: ["Interchangeable", "Mathematical", "DataTypes", "Scoping"],
-  },
-  {
-    id: 4,
-    question: "What is an arrow function in JavaScript?",
-    answer: "Concise",
-    choices: ["ThrowsError", "Sorting", "Loop", "Concise"],
-  },
-  {
-    id: 5,
-    question: "What does the 'this' keyword refer to in JavaScript?",
-    answer: "Executing",
-    choices: ["CallStack", "Global", "Parent", "Executing"],
-  },
-  // Add more questions as needed
-];
-
-// TODO: No use as of now
-let currId = 5;
-console.log(content);
 
 const quizStart = document.getElementById("start-quiz");
 const customize = document.getElementById("customize");
