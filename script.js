@@ -1,5 +1,53 @@
 // TODO: when the exit button is added, should also display the marque again as it was included when the start quiz is clicked,
 // the marquee's display would be none
+let newQuestion = {};
+
+function newValues() {
+  let inputQuestion = document.getElementById("input-question");
+  let choice1 = document.getElementById("choice-1");
+  let choice2 = document.getElementById("choice-2");
+  let choice3 = document.getElementById("choice-3");
+  let choice4 = document.getElementById("choice-4");
+  let answer = document.getElementById("answer");
+
+  let inputQuestionValue = inputQuestion.value;
+  let choice1Value = choice1.value;
+  let choice2Value = choice2.value;
+  let choice3Value = choice3.value;
+  let choice4Value = choice4.value;
+  let answerValue = answer.value;
+
+  if (
+    inputQuestionValue === "" ||
+    choice1Value === "" ||
+    choice2Value === "" ||
+    choice3Value === "" ||
+    choice4Value === "" ||
+    answerValue === ""
+  ) {
+    alert("No values");
+    return;
+  }
+
+  newQuestion = {
+    id: ++currId,
+    question: inputQuestionValue,
+    answer: answerValue,
+    choices: [choice1Value, choice2Value, choice3Value, choice4Value],
+  };
+  content.push(newQuestion);
+  console.log(content);
+
+  // Reset the form
+  document.getElementById("quizForm").reset();
+}
+
+document
+  .getElementById("quizForm")
+  ?.addEventListener("submit", function (event) {
+    event.preventDefault();
+    newValues();
+  });
 
 const content = [
   {
@@ -37,13 +85,14 @@ const content = [
 
 // TODO: No use as of now
 let currId = 5;
+console.log(content);
 
 const quizStart = document.getElementById("start-quiz");
 const customize = document.getElementById("customize");
 const quizContainer = document.getElementById("quiz-container");
 const marquee = document.getElementById("marquee");
 
-quizStart.addEventListener("click", () => {
+quizStart?.addEventListener("click", () => {
   quizContainer.style.display = "inline-block";
   startAll();
   marquee.style.display = "none";
