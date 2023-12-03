@@ -76,32 +76,30 @@
             <form id="quizForm">
                 <div class="row">
                     <label for="inputPassword5" class="form-label text-light">QUESTION:</label>
-                    <input type="text" id="input-question" class="form-control">
+                    <input type="text" id="input-question" class="form-control w-100">
                     <div id="passwordHelpBlock" class="form-text text-light">
                         Fill in the required details for the question. Ensure your questions are clear and well-formulated to enhance the overall quiz experience.
                         <hr>
                     </div>
                 </div>
-                <div class="row g-3 align-items-center">
+                <div class="row align-items-center">
                     <div class="col-auto">
                         <label for="choice-1" class="col-form-label mb-3 d-flex text-white">Choice 1:</label>
                         <label for="choice-2" class="col-form-labe  mb-3 d-flex text-white">Choice 2:</label>
                         <label for="choice-3" class="col-form-label mb-3 d-flex text-white">Choice 3:</label>
                         <label for="choice-4" class="col-form-label mb-3 d-flex text-white">Choice 4:</label>
+                        <label for="answer" class="col-form-label mb-3 d-flex text-white">Answer:</label>
                     </div>
                     <div class="col-auto">
                         <input type="text" id="choice-1" class="form-control mb-2">
                         <input type="text" id="choice-2" class="form-control mb-2">
                         <input type="text" id="choice-3" class="form-control mb-2">
                         <input type="text" id="choice-4" class="form-control mb-2">
-                    </div>
-                    <div class="col-auto">
-                        <label for="answer" class="col-form-label d-flex text-white">Answer</label>
                         <input type="text" id="answer" class="form-control mb-2">
                     </div>
                     <div>
-                        <button type="button" class="btn btn-dark" onclick="window.location.href='./index.html'">Back</button>
-                        <button type="button" class="btn btn-dark" onclick="newValues()">Submit</button>
+                        <button type="button" class="btn btn-dark" id="back-button" onclick="window.location.href='./index.html'">Back</button>
+                        <button type="button" class="btn btn-dark" id="submit-button" onclick="newValues()">Submit</button>
                     </div>
                 </div>
             </form>

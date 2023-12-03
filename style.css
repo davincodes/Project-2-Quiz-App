@@ -14,6 +14,9 @@ body {
 #nav-text {
   color: #66fcf1 !important;
 }
+#submit-button {
+  margin-left: 120px;
+}
 .font {
   font-family: "VT323", monospace;
 }
@@ -25,7 +28,7 @@ body {
 marquee {
   color: #66fcf1;
   font-family: "VT323", monospace;
-  margin-top: 275px;
+  margin-top: 375px;
   border: 1px solid white;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
@@ -256,4 +259,19 @@ marquee {
 
 .footer-20192 .cta h3 {
   font-size: 20px;
+}
+
+/* Media Queries */
+
+@media (max-width: 2000px) {
+  #choice-1,
+  #choice-2,
+  #choice-3,
+  #choice-4,
+  #answer {
+    width: 170px;
+  }
+  .quiz-section {
+    height: 600px;
+  }
 }
