@@ -1,7 +1,27 @@
-// TODO: when the exit button is added, should also display the marque again as it was included when the start quiz is clicked,
-// the marquee's display would be none
+let toggleSwitch = document.getElementById("toggle-mode");
+let mode = document.getElementById("styles");
+let burgerIcon = document.getElementById("navigation-bar");
 
-// TODO: Add an alert if a new question was added, if there is a similar question.
+toggleSwitch.addEventListener("click", (e) => {
+  e.preventDefault();
+  mode.setAttribute(
+    "href",
+    mode.getAttribute("href") === "lightstyle.css"
+      ? mode.getAttribute("data-dark-mode")
+      : "lightstyle.css"
+  );
+  if (
+    toggleSwitch.innerText.includes("Light Mode") &&
+    burgerIcon.classList.contains("navbar-light")
+  ) {
+    toggleSwitch.innerHTML = `Dark Mode <i class="fa-solid fa-circle-half-stroke fa-lg"></i>`;
+    burgerIcon.classList.replace("navbar-light", "navbar-dark");
+  } else {
+    toggleSwitch.innerHTML = `Light Mode <i class="fa-solid fa-circle-half-stroke fa-lg"></i>`;
+    burgerIcon.classList.replace("navbar-dark", "navbar-light");
+  }
+});
+
 let content = JSON.parse(localStorage.getItem("content")) || [
   {
     id: 1,

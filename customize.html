@@ -16,40 +16,81 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="lightstyle.css">
+    <link 
+        rel="stylesheet" 
+        href="lightstyle.css" 
+        id="styles"
+        data-dark-mode="style.css">
 </head>
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="container-fluid navbar navbar-expand-lg navbar-light bg-light" id="navigation-bar">
-        <a class="navbar-brand ms-3" id="nav-text" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="35"
-                height="30" viewBox="0 0 45 47" fill="none">
-                <path
-                    d="M22.15 2C23.5559 1.99963 24.9043 2.55774 25.8987 3.55157C26.8931 4.54539 27.452 5.89353 27.4525 7.29942V39.0966C27.4523 39.7927 27.315 40.482 27.0484 41.1251C26.7818 41.7682 26.3912 42.3525 25.8988 42.8446C25.4064 43.3367 24.822 43.727 24.1787 43.9933C23.5355 44.2595 22.8461 44.3964 22.15 44.3962C20.7441 44.3966 19.3957 43.8385 18.4013 42.8447C17.4069 41.8508 16.848 40.5027 16.8475 39.0968V7.29975C16.8477 6.60359 16.985 5.91429 17.2516 5.2712C17.5181 4.6281 17.9088 4.04381 18.4011 3.55168C18.8935 3.05955 19.478 2.66923 20.1212 2.40299C20.7645 2.13675 21.4538 1.99981 22.15 2Z"
-                    stroke="white" stroke-width="3.90758" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M2.00043 2.96776C2.00041 2.84074 2.02542 2.71496 2.07404 2.59761C2.12266 2.48027 2.19394 2.37366 2.2838 2.28388C2.37366 2.1941 2.48033 2.12292 2.59772 2.0744C2.71511 2.02589 2.84092 2.00099 2.96794 2.00113C5.5228 2.00165 7.97296 3.01641 9.78006 4.82244C11.5871 6.62847 12.6033 9.07804 12.6054 11.6329V43.4301C12.6054 43.5571 12.5804 43.6829 12.5318 43.8002C12.4831 43.9176 12.4119 44.0242 12.322 44.114C12.2321 44.2037 12.1255 44.2749 12.0081 44.3234C11.8907 44.372 11.7649 44.3969 11.6379 44.3967C9.08282 44.3963 6.63247 43.3815 4.82527 41.5754C3.01807 39.7692 2.00187 37.3194 2 34.7644L2.00043 2.96776Z"
-                    stroke="white" stroke-width="3.90758" stroke-linecap="round" stroke-linejoin="round" />
-                <path
-                    d="M31.6945 11.6323C31.6964 9.0773 32.7126 6.62755 34.5198 4.82139C36.3269 3.01523 38.7773 2.00043 41.3323 2C41.4593 1.99986 41.5851 2.02476 41.7025 2.07327C41.8199 2.12179 41.9266 2.19297 42.0164 2.28275C42.1063 2.37253 42.1775 2.47914 42.2262 2.59648C42.2748 2.71383 42.2998 2.83961 42.2998 2.96663V34.7638C42.2979 37.3188 41.2818 39.7686 39.4746 41.5748C37.6674 43.381 35.2171 44.3958 32.662 44.3962C32.535 44.3964 32.4092 44.3715 32.2918 44.323C32.1744 44.2744 32.0677 44.2033 31.9779 44.1135C31.888 44.0237 31.8167 43.9171 31.7681 43.7997C31.7195 43.6824 31.6945 43.5566 31.6945 43.4296V11.6323Z"
-                    stroke="white" stroke-width="3.90758" stroke-linecap="round" stroke-linejoin="round" />
+    <nav class="navbar navbar-light navbar-expand-lg bg-body-tertiary" id="navigation-bar">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#" id="nav-text"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="35"
+              height="30"
+              viewBox="0 0 45 47"
+              fill="none"
+            >
+              <path
+                d="M22.15 2C23.5559 1.99963 24.9043 2.55774 25.8987 3.55157C26.8931 4.54539 27.452 5.89353 27.4525 7.29942V39.0966C27.4523 39.7927 27.315 40.482 27.0484 41.1251C26.7818 41.7682 26.3912 42.3525 25.8988 42.8446C25.4064 43.3367 24.822 43.727 24.1787 43.9933C23.5355 44.2595 22.8461 44.3964 22.15 44.3962C20.7441 44.3966 19.3957 43.8385 18.4013 42.8447C17.4069 41.8508 16.848 40.5027 16.8475 39.0968V7.29975C16.8477 6.60359 16.985 5.91429 17.2516 5.2712C17.5181 4.6281 17.9088 4.04381 18.4011 3.55168C18.8935 3.05955 19.478 2.66923 20.1212 2.40299C20.7645 2.13675 21.4538 1.99981 22.15 2Z"
+                stroke="white"
+                stroke-width="3.90758"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2.00043 2.96776C2.00041 2.84074 2.02542 2.71496 2.07404 2.59761C2.12266 2.48027 2.19394 2.37366 2.2838 2.28388C2.37366 2.1941 2.48033 2.12292 2.59772 2.0744C2.71511 2.02589 2.84092 2.00099 2.96794 2.00113C5.5228 2.00165 7.97296 3.01641 9.78006 4.82244C11.5871 6.62847 12.6033 9.07804 12.6054 11.6329V43.4301C12.6054 43.5571 12.5804 43.6829 12.5318 43.8002C12.4831 43.9176 12.4119 44.0242 12.322 44.114C12.2321 44.2037 12.1255 44.2749 12.0081 44.3234C11.8907 44.372 11.7649 44.3969 11.6379 44.3967C9.08282 44.3963 6.63247 43.3815 4.82527 41.5754C3.01807 39.7692 2.00187 37.3194 2 34.7644L2.00043 2.96776Z"
+                stroke="white"
+                stroke-width="3.90758"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M31.6945 11.6323C31.6964 9.0773 32.7126 6.62755 34.5198 4.82139C36.3269 3.01523 38.7773 2.00043 41.3323 2C41.4593 1.99986 41.5851 2.02476 41.7025 2.07327C41.8199 2.12179 41.9266 2.19297 42.0164 2.28275C42.1063 2.37253 42.1775 2.47914 42.2262 2.59648C42.2748 2.71383 42.2998 2.83961 42.2998 2.96663V34.7638C42.2979 37.3188 41.2818 39.7686 39.4746 41.5748C37.6674 43.381 35.2171 44.3958 32.662 44.3962C32.535 44.3964 32.4092 44.3715 32.2918 44.323C32.1744 44.2744 32.0677 44.2033 31.9779 44.1135C31.888 44.0237 31.8167 43.9171 31.7681 43.7997C31.7195 43.6824 31.6945 43.5566 31.6945 43.4296V11.6323Z"
+                stroke="white"
+                stroke-width="3.90758"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
             </svg>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
             <span class="navbar-toggler-icon"></span>
-        </button>
-        <nav class="collapse navbar-collapse" id="navbarNav">
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto mx-5">
-                <li class="nav-item active">
-                    <a class="nav-link text-white" href="#">Code Maestro</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About</a>
-                </li>
+                <li class="nav-item border white ms-2 rounded-3">
+                    <a class="nav-link text-white" id="toggle-mode" href=""
+                      >Light Mode <i class="fa-solid fa-circle-half-stroke fa-lg"></i
+                    ></a>
+                  </li>
+              <li class="nav-item active">
+                <a class="nav-link text-white" href="#code-maestro-instruction"
+                  >Code Maestro</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" href="#code-maestro-developers"
+                  >About</a
+                >
+              </li>
+              
             </ul>
-        </nav>
-    </nav>
+          </div>
+        </div>
+      </nav>
 
     <!-- QUIZ SECTION -->
     <section class="quiz-section black rounded-4 m-5">
@@ -116,7 +157,7 @@
             <div class="row">
                 <div class="row">
                     <div class="about col-md-12">
-                        <h3 class="text-white mx-5 text-center about-title" id="">
+                        <h3 class="text-white mx-5 text-center about-title" id="code-maestro-instruction">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 45 47"
                                 fill="none">
                                 <path
@@ -193,7 +234,7 @@
     </section>
     <!-- Developers Section -->
     <section class="text-white mt-5" id="devs">
-        <header class="soft-eng text-center">
+        <header class="soft-eng text-center" id="code-maestro-developers">
             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 45 47" fill="none">
                 <path
                     d="M22.15 2C23.5559 1.99963 24.9043 2.55774 25.8987 3.55157C26.8931 4.54539 27.452 5.89353 27.4525 7.29942V39.0966C27.4523 39.7927 27.315 40.482 27.0484 41.1251C26.7818 41.7682 26.3912 42.3525 25.8988 42.8446C25.4064 43.3367 24.822 43.727 24.1787 43.9933C23.5355 44.2595 22.8461 44.3964 22.15 44.3962C20.7441 44.3966 19.3957 43.8385 18.4013 42.8447C17.4069 41.8508 16.848 40.5027 16.8475 39.0968V7.29975C16.8477 6.60359 16.985 5.91429 17.2516 5.2712C17.5181 4.6281 17.9088 4.04381 18.4011 3.55168C18.8935 3.05955 19.478 2.66923 20.1212 2.40299C20.7645 2.13675 21.4538 1.99981 22.15 2Z"
@@ -220,11 +261,18 @@
                                 <div class="card-text pt-1">
                                     <h5 class="member-name mb-0 text-center text-primary font-weight-bold">Arvin Antonio
                                     </h5>
-                                    <div class="mb-3 text-center">Software Engineer</div>
-                                    <div>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula
-                                        eget dolor. Vivamus eget eros vestibulum, accumsan ante viverra, condimentum
-                                        tellus. Curabitur pellentesque convallis purus non ornare. Donec bibendum sed
-                                        purus dignissim rutrum. Maecenas bibendum feugiat est, et venenatis nunc.</div>
+                                    <div class="mb-3 text-center">Aspiring Software Engineer</div>
+                                    <div>An Aspiring software engineer on an unwavering journey of
+                                        continuous upskilling, diligently honing skills across a
+                                        comprehensive spectrum of full-stack technologies.
+                                        Demonstrating a steadfast dedication to embracing and
+                                        implementing industry-leading practices, I am consistently
+                                        staying attuned to the dynamic landscape of the latest
+                                        sector developments. This commitment extends beyond mere
+                                        functionality, placing a premium on an intuitive and
+                                        user-centric approach. By prioritizing and addressing the
+                                        evolving needs of users.
+                                    </div>
                                 </div>
                             </div><!--//card-body-->
                             <div class="card-footer theme-bg-primary border-0 text-center">
@@ -259,18 +307,20 @@
                                 </div>
                                 <div class="card-text pt-1">
                                     <h5 class="member-name mb-0 text-center text-primary font-weight-bold">Brent Ross
-                                        Habawel</h5>
+                                        Habawel
+                                    </h5>
                                     <div class="mb-3 text-center">Associate Software Engineer</div>
                                     <div>An exceptionally skilled associate software engineer who
                                         actively participates in continuous upskilling programs to
                                         continuously expand his knowledge of various full-stack
-                                        technologies. His persistent dedication to industry best
-                                        practices is supplemented by his commitment to staying up to
-                                        date with the latest developments in the area. He constantly
-                                        approaches their work with a mobile-first and user-friendly
+                                        technologies. His dedication to industry best practices is
+                                        supplemented by his commitment to staying up to date with
+                                        the latest developments in the area. He constantly
+                                        approaches his work with a mobile-first and user-friendly
                                         approach, making sure that the applications he/they create
                                         not only satisfy but also exceed the needs of contemporary
-                                        consumers.</div>
+                                        consumers.
+                                    </div>
                                 </div>
                             </div><!--//card-body-->
                             <div class="card-footer theme-bg-primary border-0 text-center">
