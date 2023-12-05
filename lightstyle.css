@@ -10,14 +10,26 @@ body {
 .instruction-content,
 .developer-title,
 svg path,
-p {
+p,
+.form-text,
+.choice-label {
   color: black !important;
 }
 
-/* #burger-icon {
-  color: #fff !important;
+.question-label {
+  color: #000000 !important;
   background-color: #fff !important;
-} */
+}
+
+.input-label-question {
+  color: #000000 !important;
+  background-color: transparent !important;
+  border: 1px solid #000000 !important;
+}
+
+.input-label {
+  border: 1px solid #000000 !important;
+}
 
 svg path {
   stroke: #000000 !important;
@@ -62,16 +74,16 @@ marquee {
 .question-container {
   font-family: "VT323", monospace;
 }
-#question-content{
-    color: #000000 !important;
+#question-content {
+  color: #000000 !important;
 }
 #choices-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-#timer{
-    color: #000000 !important;
+#timer {
+  color: #000000 !important;
 }
 
 .options {
@@ -285,12 +297,12 @@ marquee {
   font-size: 20px;
 }
 /* Customize Section */
-#question-guide{
-    color: black;
+#question-guide {
+  color: black;
 }
-.question-label{
-    color: rgb(0, 0, 0) !important;
-    background-color: black;
+.question-label {
+  color: rgb(0, 0, 0) !important;
+  background-color: black;
 }
 
 /* Media Queries */
