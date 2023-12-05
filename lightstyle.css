@@ -306,7 +306,7 @@ marquee {
 
 /* Media Queries */
 
-@media (max-width: 2000px) {
+@media (max-width: 10000px) {
   #choice-1,
   #choice-2,
   #choice-3,

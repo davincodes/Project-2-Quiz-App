@@ -1,4 +1,3 @@
-let darkMode = localStorage.setItem("darkMode", JSON.stringify("darkMode"));
 let toggleSwitch = document.getElementById("toggle-mode");
 let mode = document.getElementById("styles");
 let burgerIcon = document.getElementById("navigation-bar");
