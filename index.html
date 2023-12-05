@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./images/image-removebg-preview.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="./images/image-removebg-preview.png" />
     <title>Code Maestro | Ultimate Coding quiz web app</title>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="bootstrap.min.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@700&family=Montserrat:wght@600&family=Poppins&family=Roboto&family=VT323&display=swap"
       rel="stylesheet"
-    >
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
-    >
-    <link rel="stylesheet" href="lightstyle.css">
+    />
+    <link rel="stylesheet" href="lightstyle.css" />
   </head>
   <body>
     <!-- Navigation Bar -->
@@ -67,7 +67,7 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon" id="burger-icon"></span>
       </button>
       <nav class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto mx-5">
@@ -79,7 +79,7 @@
           </li>
           <li class="border white ms-2 rounded-3">
             <!-- Change text to Dark mode once clicked -->
-            <a class="nav-link text-white" href="">Light Mode</a> 
+            <a class="nav-link text-white" href="">Light Mode</a>
           </li>
         </ul>
       </nav>
@@ -192,7 +192,7 @@
         <div class="row">
           <div class="row">
             <div class="col-md-12">
-              <h3 class="text-white mx-5 text-center">
+              <h3 class="text-white mx-5 text-center about-title">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="30"
@@ -223,16 +223,16 @@
                   />
                 </svg>
                 &nbsp;Code Maestro : Quiz App
-                <hr>
+                <hr />
               </h3>
             </div>
           </div>
           <div class="col-md-12" data-aos="fade-right" data-aos-duration="2000">
-            <p class="text-white mt-3 mx-5">
+            <p class="text-white mt-3 mx-5 about-main-content">
               Welcome to Code Maestro, the ultimate coding quiz web app designed
               to challenge and refine your programming skills.
-              <br>
-              <br>
+              <br />
+              <br />
               Embark on a stimulating intellectual adventure and elevate your
               coding prowess with Code Maestro, the ultimate multiple-choice
               coding quiz web app designed to challenge and refine your
@@ -240,8 +240,8 @@
               interactive platform to test your knowledge, sharpen your
               problem-solving skills, and expand your understanding of
               programming concepts through a captivating multiple-choice format.
-              <br>
-              <br>
+              <br />
+              <br />
               Code Maestro is more than just a quiz app; it's an invitation to
               embark on a journey of intellectual growth and coding mastery.
               Through its engaging multiple-choice format, Code Maestro
@@ -249,26 +249,26 @@
               effectively, and expand your programming horizons. Embrace the
               challenge, unleash your potential, and become a true Code Maestro.
             </p>
-            <br>
+            <br />
             <!-- Instructions -->
             <div class="text-white mx-5">
-              <h3 class="text-white fw-bold">Instructions</h3>
-              <hr>
-              <ol>
+              <h3 class="text-white fw-bold instruction-title">Instructions</h3>
+              <hr />
+              <ol class="instruction-content">
                 <li>
                   Choose your programming language: Code Maestro offers quizzes
                   for a variety of programming languages, including Java,
                   Python, C++, JavaScript, and more. Select the language you
                   want to challenge yourself in.
                 </li>
-                <br>
+                <br />
                 <li>
                   Set your timer: You will be given a total of 120 seconds to
                   answer all 10 questions in each quiz. Set your timer
                   accordingly to ensure you have enough time to complete the
                   challenge.
                 </li>
-                <br>
+                <br />
                 <li>
                   Read the questions carefully: Each question will present you
                   with a programming scenario or problem. Read the question
@@ -313,7 +313,9 @@
             stroke-linejoin="round"
           />
         </svg>
-        <h1 class="font text-center">Code Maestro Developers</h1>
+        <h1 class="font text-center developer-title">
+          Code Maestro Developers
+        </h1>
       </header>
     </section>
     <section class="team-section py-5 m-5">
@@ -331,7 +333,7 @@
                     class="rounded-circle mx-auto d-inline-block shadow-sm"
                     src="./images/1.png"
                     alt=""
-                  >
+                  />
                 </div>
                 <div class="card-text pt-1">
                   <h5
@@ -412,7 +414,7 @@
                     class="rounded-circle mx-auto d-inline-block shadow-sm"
                     src="./images/2.png"
                     alt=""
-                  >
+                  />
                 </div>
                 <div class="card-text pt-1">
                   <h5
@@ -480,7 +482,7 @@
         </div>
       </div>
     </section>
-    <footer class="footer-20192">
+    <footer class="footer-20192 main-footer">
       <div class="site-section">
         <div class="container">
           <div
@@ -494,7 +496,7 @@
               </h2>
               <h3 class="text-dark">
                 Look no further! We are your dream team, armed and ready with
-                the skills necessary<br>
+                the skills necessary<br />
                 to bring even the most ambitious of visions into reality.
               </h3>
             </div>
@@ -546,7 +548,7 @@
               <div class="list-unstyled social">
                 <a href="mailto:aarvinantonio@gmail.com" class="text-info"
                   >Arvin Antonio </a
-                ><br>
+                ><br />
                 <a href="mailto:rosshabawel12@gmail.com" class="text-info"
                   >Brent Ross Habawel</a
                 >
