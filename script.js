@@ -1,9 +1,13 @@
+let darkMode = localStorage.setItem("darkMode", JSON.stringify("darkMode"));
 let toggleSwitch = document.getElementById("toggle-mode");
 let mode = document.getElementById("styles");
 let burgerIcon = document.getElementById("navigation-bar");
 
+const gameSound = new Audio("./gameSound.mp3");
+
 toggleSwitch.addEventListener("click", (e) => {
   e.preventDefault();
+
   mode.setAttribute(
     "href",
     mode.getAttribute("href") === "lightstyle.css"
@@ -133,14 +137,17 @@ const keepQuestionIndex = prevQuestionIndex[0];
 
 let score = 0;
 let timer;
-let timerRemaining = 120;
+let timerRemaining = 10 * content.length;
 
 const questionContainer = document.getElementById("question-content");
 const choicesContainer = document.getElementById("choices-content");
 const timerContainer = document.getElementById("timer");
 const button = document.getElementById("next-btn");
+const submitButton = document.getElementById("submit-btn");
+const exitButton = document.getElementById("exit-btn");
 
 function startAll() {
+  gameSound.play();
   startQuiz();
   startTimer();
 }
@@ -178,6 +185,10 @@ function shuffleQuestion() {
 }
 
 function showQuestion() {
+  exitButton.disabled = true;
+  exitButton.style.display = "none";
+  submitButton.disabled = false;
+  submitButton.style.display = "inline-block";
   currQuestionIndex = shuffleQuestion();
   prevQuestionIndex.push(currQuestionIndex);
   const question = content[currQuestionIndex].question;
@@ -228,6 +239,11 @@ function nextQuestion() {
   }
 }
 
+function handleSubmit() {
+  let confirmation = confirm("Are you sure you want to submit?");
+  confirmation ? endQuiz() : null;
+}
+
 function endQuiz() {
   timerRemaining <= 0
     ? (questionContainer.innerHTML = `Times up!\nYour score is ${score}`)
@@ -238,9 +254,15 @@ function endQuiz() {
   button.disabled = true;
   button.style.display = "none";
 
+  submitButton.disabled = true;
+  submitButton.style.display = "none";
+
   const tryAgain = document.getElementById("try-again");
   tryAgain.disabled = false;
   tryAgain.style.display = "inline-block";
+
+  exitButton.disabled = false;
+  exitButton.style.display = "inline-block";
 
   tryAgain.addEventListener("click", () => {
     timerRemaining = 120;
@@ -256,4 +278,8 @@ function endQuiz() {
     button.style.display = "inline-block";
     startAll();
   });
+}
+
+function handleExit() {
+  window.location.href = "./index.html";
 }

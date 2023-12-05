@@ -95,6 +95,7 @@ marquee {
   background-color: #66fcf1;
 }
 .next-button {
+  background-color: #efefef;
   display: inline-block;
   padding: 0.5em 1.6em;
   border: 3px solid #ffffff;
@@ -109,7 +110,6 @@ marquee {
   transition: all 0.2s;
   position: relative;
   color: rgb(0, 0, 0);
-  border: solid 1px black;
 }
 
 .next-button:hover {

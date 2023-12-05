@@ -61,6 +61,7 @@ marquee {
   background-color: #66fcf1;
 }
 .next-button {
+  background-color: #efefef;
   display: inline-block;
   padding: 0.5em 1.6em;
   border: 3px solid #ffffff;

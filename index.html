@@ -172,11 +172,27 @@
               class="col-md-12 d-flex justify-content-center align-items-center"
             >
               <button
-                id="next-btn"
                 class="next-button"
+                id="next-btn"
                 onclick="nextQuestion()"
               >
                 Next
+              </button>
+              <button
+                class="next-button"
+                id="submit-btn"
+                onclick="handleSubmit()"
+              >
+                Submit
+              </button>
+              <button
+                id="exit-btn"
+                class="next-button"
+                style="display: none"
+                disabled
+                onclick="handleExit()"
+              >
+                Exit
               </button>
               <button
                 id="try-again"
@@ -271,17 +287,15 @@
               <hr />
               <ol class="instruction-content">
                 <li>
-                  Choose your programming language: Code Maestro offers quizzes
-                  for a variety of programming languages, including Java,
-                  Python, C++, JavaScript, and more. Select the language you
-                  want to challenge yourself in.
+                  Code Maestro offers quizzes for JavaScript programming
+                  language. This will immerse users to test their understanding
+                  of JavaScript.
                 </li>
                 <br />
                 <li>
-                  Set your timer: You will be given a total of 120 seconds to
-                  answer all 10 questions in each quiz. Set your timer
-                  accordingly to ensure you have enough time to complete the
-                  challenge.
+                  Set your timer: You will be given a total of 50 seconds to
+                  answer all 5 predefined questions in each quiz. Each time you
+                  add a new question, the timer will incease by 10 seconds.
                 </li>
                 <br />
                 <li>
