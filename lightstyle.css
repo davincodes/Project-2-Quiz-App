@@ -28,7 +28,7 @@ svg path {
   font-family: "VT323", monospace;
 }
 #title {
-  color: #66fcf1;
+  color: #000000;
   font-family: "VT323", monospace;
 }
 #submit-button {
@@ -38,7 +38,7 @@ svg path {
   font-family: "VT323", monospace;
 }
 .quiz-section {
-  border: 2px solid rgb(255, 255, 255);
+  border: 2px solid rgb(0, 0, 0);
   height: 500px;
   background-color: #ffffff !important;
 }
@@ -60,13 +60,18 @@ marquee {
 /* Na add ko simple styling lng sya*/
 
 .question-container {
-  color: #66fcf1 !important;
   font-family: "VT323", monospace;
+}
+#question-content{
+    color: #000000 !important;
 }
 #choices-content {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+#timer{
+    color: #000000 !important;
 }
 
 .options {
@@ -93,6 +98,7 @@ marquee {
   transition: all 0.2s;
   position: relative;
   color: rgb(0, 0, 0);
+  border: solid 1px black;
 }
 
 .next-button:hover {
@@ -278,6 +284,15 @@ marquee {
 .footer-20192 .cta h3 {
   font-size: 20px;
 }
+/* Customize Section */
+#question-guide{
+    color: black;
+}
+.question-label{
+    color: rgb(0, 0, 0) !important;
+    background-color: black;
+}
+
 /* Media Queries */
 
 @media (max-width: 2000px) {
