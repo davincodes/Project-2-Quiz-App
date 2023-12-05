@@ -105,6 +105,10 @@ marquee {
     top: 0em;
   }
 }
+
+#about{
+  color: black !important;
+}
 /* Developers section */
 .py-5 {
   padding-top: 3rem !important;
