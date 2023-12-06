@@ -312,6 +312,12 @@ marquee {
 }
 
 /* Media Queries */
+@media screen and (min-width: 992px) {
+  .theme{
+    position: absolute;
+    right: 200px;
+  }
+}
 @media screen and (max-width: 600px) {
   .above-questions {
     display: flex;
