@@ -9,6 +9,8 @@ body {
 .instruction-content,
 .developer-title,
 svg path,
+#points,
+#highscore,
 p,
 .form-text,
 .choice-label {
@@ -67,8 +69,6 @@ marquee {
             height: 60vh;
             overflow: hidden;
         } */
-
-/* Na add ko simple styling lng sya*/
 
 .question-container {
   font-family: "VT323", monospace;
@@ -305,6 +305,13 @@ marquee {
 }
 
 /* Media Queries */
+
+@media screen and (max-width: 600px) {
+  .above-questions {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media (max-width: 2000px) {
   #choice-1,

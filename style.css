@@ -266,6 +266,12 @@ marquee {
 }
 
 /* Media Queries */
+@media screen and (max-width: 600px) {
+  .above-questions {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 @media (max-width: 2000px) {
   #choice-1,

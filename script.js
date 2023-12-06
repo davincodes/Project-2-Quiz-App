@@ -1,4 +1,3 @@
-let darkMode = localStorage.setItem("darkMode", JSON.stringify("darkMode"));
 let toggleSwitch = document.getElementById("toggle-mode");
 let mode = document.getElementById("styles");
 let burgerIcon = document.getElementById("navigation-bar");
@@ -29,33 +28,63 @@ toggleSwitch.addEventListener("click", (e) => {
 let content = JSON.parse(localStorage.getItem("content")) || [
   {
     id: 1,
-    question: "What is the purpose of the 'typeof' operator in JavaScript?",
-    answer: "Type",
-    choices: ["Compare", "Declare", "Loop", "type"],
+    question: "How do you define the content of the web pages?",
+    answer: "HTML",
+    choices: ["HTML", "CSS", "Javascript", "Jquery"],
   },
   {
     id: 2,
-    question: "What is a closure in JavaScript?",
-    answer: "Scope",
-    choices: ["Looping", "Const", "Tag", "Scope"],
+    question: "What will specify the layout of the web pages?",
+    answer: "CSS",
+    choices: ["https", "HTML", "CSS", "Javascript"],
   },
   {
     id: 3,
-    question: "What is the difference between 'let', 'const', and 'var'?",
-    answer: "Scoping",
-    choices: ["Interchangeable", "Mathematical", "DataTypes", "Scoping"],
+    question: "What will you use to program the behavior of web pages?",
+    answer: "Javascript",
+    choices: ["Javascript", "CSS", "Sass", "HTML"],
   },
   {
     id: 4,
-    question: "What is an arrow function in JavaScript?",
-    answer: "Concise",
-    choices: ["ThrowsError", "Sorting", "Loop", "Concise"],
+    question: `It is a block of JavaScript code, that can be executed when "called" for`,
+    answer: "Function",
+    choices: ["Head", "Body", "Array", "Function"],
   },
   {
     id: 5,
-    question: "What does the 'this' keyword refer to in JavaScript?",
-    answer: "Executing",
-    choices: ["CallStack", "Global", "Parent", "Executing"],
+    question: "All are semantic elements except?",
+    answer: "div",
+    choices: ["header", "footer", "div", "section"],
+  },
+  {
+    id: 6,
+    question: "Spot the Javascript non-reserved word",
+    answer: "returns",
+    choices: ["continue", "await", "async", "returns"],
+  },
+  {
+    id: 7,
+    question: "What is the latest Javascript version?",
+    answer: "ES6",
+    choices: ["ES6", "ES5", "2016", "2017"],
+  },
+  {
+    id: 8,
+    question: "What will make the web page responsive?",
+    answer: "@media",
+    choices: ["response", "@media", "div", "section"],
+  },
+  {
+    id: 9,
+    question: "In the DOM, all HTML elements are defined as?",
+    answer: "Objects",
+    choices: ["Functions", "Property", "Objects", "Method"],
+  },
+  {
+    id: 10,
+    question: "It is a method to round down a number to its nearest integer",
+    answer: "Math.floor",
+    choices: ["Math.ceil", "Math.floor", "Math.get", "Math.set"],
   },
 ];
 let currId = content.length;
@@ -145,6 +174,12 @@ const timerContainer = document.getElementById("timer");
 const button = document.getElementById("next-btn");
 const submitButton = document.getElementById("submit-btn");
 const exitButton = document.getElementById("exit-btn");
+let points = document.getElementById("points");
+let highscore = document.getElementById("highscore");
+
+let highestScore =
+  localStorage.getItem("highscore") ||
+  localStorage.setItem("highscore", Number(score));
 
 function startAll() {
   gameSound.play();
@@ -160,11 +195,11 @@ function startQuiz() {
 
 function startTimer() {
   // show timer before decrement
-  timerContainer.innerHTML = timerRemaining;
+  timerContainer.innerHTML = `Timer: ${timerRemaining}`;
   timer = setInterval(() => {
     timerRemaining--;
     // show timer during 0s
-    timerContainer.innerHTML = timerRemaining;
+    timerContainer.innerHTML = `Timer: ${timerRemaining}`;
     if (timerRemaining <= 0) {
       endQuiz();
       clearInterval(timer);
@@ -185,6 +220,8 @@ function shuffleQuestion() {
 }
 
 function showQuestion() {
+  points.innerHTML = `Points: ${score}`;
+  highscore.innerHTML = `High Score: ${localStorage.getItem("highscore")}`;
   exitButton.disabled = true;
   exitButton.style.display = "none";
   submitButton.disabled = false;
@@ -219,9 +256,10 @@ function checkAnswer(index) {
   if (
     currAnswer.choices[index].toUpperCase() === currAnswer.answer.toUpperCase()
   ) {
-    score++;
+    score += 10;
     document.getElementById(`options-${index}`).style.backgroundColor =
       "#66fcf1";
+    points.innerHTML = `Points: ${score}`;
   } else {
     document.getElementById(`options-${index}`).style.backgroundColor =
       "#EC5656"; //
@@ -245,6 +283,11 @@ function handleSubmit() {
 }
 
 function endQuiz() {
+  highestScore =
+    score > localStorage.getItem("highscore")
+      ? localStorage.setItem("highscore", score)
+      : localStorage.getItem("highscore");
+  highscore.innerHTML = `Highscore: ${localStorage.getItem("highscore")}`;
   timerRemaining <= 0
     ? (questionContainer.innerHTML = `Times up!\nYour score is ${score}`)
     : (questionContainer.innerHTML = `Your score is ${score}`);
