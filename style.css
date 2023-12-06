@@ -6,8 +6,12 @@ body {
 #navigation-bar {
   background-color: #0b0c10 !important;
   font-family: "VT323", monospace;
+  white-space: nowrap;
 }
-
+.theme{
+  margin-left: auto !important;
+  white-space: nowrap;
+}
 #title {
   color: #66fcf1;
   font-family: "VT323", monospace;
@@ -17,6 +21,9 @@ body {
 }
 #submit-button {
   margin-left: 120px;
+}
+#start-quiz{
+  margin-top: 120px;
 }
 .font {
   font-family: "VT323", monospace;
@@ -29,7 +36,7 @@ body {
 marquee {
   color: #66fcf1;
   font-family: "VT323", monospace;
-  margin-top: 375px;
+  margin-top: 262px;
   border: 1px solid white;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;

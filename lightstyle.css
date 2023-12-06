@@ -39,6 +39,11 @@ svg path {
 #navigation-bar {
   background-color: #fff !important;
   font-family: "VT323", monospace;
+  white-space: nowrap;
+}
+.theme{
+  margin-left: auto !important;
+  white-space: nowrap;
 }
 #title {
   color: #000000;
@@ -46,6 +51,9 @@ svg path {
 }
 #submit-button {
   margin-left: 120px;
+}
+#start-quiz{
+  margin-top: 120px;
 }
 .font {
   font-family: "VT323", monospace;
@@ -58,7 +66,7 @@ svg path {
 marquee {
   color: #000000;
   font-family: "VT323", monospace;
-  margin-top: 375px;
+  margin-top: 265px;
   border: 1px solid #000000;
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
@@ -84,7 +92,6 @@ marquee {
 #timer {
   color: #000000 !important;
 }
-
 .options {
   /* Adjust the margin as needed for spacing between choices */
   flex: 1 0 45%; /* Adjust the width of the choices */
@@ -309,6 +316,10 @@ marquee {
   .above-questions {
     display: flex;
     flex-direction: column;
+  }
+  .theme{
+    margin-left: auto !important;
+    white-space: nowrap;
   }
 }
 
