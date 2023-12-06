@@ -8,7 +8,7 @@ body {
   font-family: "VT323", monospace;
   white-space: nowrap;
 }
-.theme{
+.theme {
   margin-left: auto !important;
   white-space: nowrap;
 }
@@ -22,8 +22,12 @@ body {
 #submit-button {
   margin-left: 120px;
 }
-#start-quiz{
+#start-quiz {
   margin-top: 120px;
+  font-family: "VT323", monospace;
+}
+#customize {
+  font-family: "VT323", monospace;
 }
 .font {
   font-family: "VT323", monospace;
@@ -274,7 +278,7 @@ marquee {
 
 /* Media Queries */
 @media screen and (min-width: 992px) {
-  .theme{
+  .theme {
     position: absolute;
     right: 200px;
   }
