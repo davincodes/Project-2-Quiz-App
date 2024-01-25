@@ -3,7 +3,7 @@
 
 ## Overview
 
-In my journey as a web developer, I delved into the realm of JavaScript with the creation of the Code Maestro Quiz Web App. This project is not just a game; it's an interactive learning experience designed to refine and challenge your web development skills. Collaborating with https://github.com/bHabawel/ we set out to create a fun and educational tool for developers.
+In our journey as a web developer, We delved into the realm of JavaScript with the creation of the Code Maestro Quiz Web App. This project is not just a game; it's an interactive learning experience designed to refine and challenge your web development skills. Collaborating with https://github.com/bHabawel/ we set out to create a fun and educational tool for developers.
 
 ## Project Highlights
 
@@ -41,9 +41,7 @@ Clone the repository:
 git clone https://github.com/davincodes/Project-2-Quiz-App.git
 ```
 
-## Acknowlegements
 
-- Special thanks to Bootstrap for providing an amazing framework.
 
 ## Contributing
 
@@ -74,5 +72,6 @@ This project is licensed under the MIT License.
 ## Acknowlegements
 
 - Special thanks to https://github.com/bHabawel/ for the collaborative effort.
+- Special thanks to Bootstrap for providing an amazing framework.
 
 Feel free to customize this template further based on the specific details of your project. Add any extra sections, dependencies, or acknowledgments that you find relevant. Good luck with your JavaScript Game project!
