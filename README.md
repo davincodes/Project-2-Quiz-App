@@ -1,5 +1,5 @@
 
-# Code Maestro Quiz Web App PROJECT
+# Code Maestro Quiz Web App 
 
 ## Overview
 
